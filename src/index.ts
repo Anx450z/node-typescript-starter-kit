@@ -10,7 +10,8 @@ import { TryDBConnect } from "./helpers";
 export const app: express.Application = express();
 
 app.use(cors());
-app.use(bodyParser.json());
+// app.use(bodyParser.json());
+app.use(express.json());
 
 app.use(async (req: Request, res: Response, next) => {
   await TryDBConnect(() => {
